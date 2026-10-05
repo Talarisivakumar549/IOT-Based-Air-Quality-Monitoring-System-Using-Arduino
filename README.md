@@ -3,6 +3,9 @@ The system can automatically monitor soil and environmental conditions, predict 
 I can provide the full project in the following structure:
 
 1. Project Architecture
+
+
+
                   ┌─────────────────────────┐
                   │       FARM / FIELD      │
                   │                         │
@@ -40,7 +43,7 @@ I can provide the full project in the following structure:
                             ▼                            ▼
                      Crop/Irrigation              Text / Voice
                        Analysis                     Notification
-2. Main Objective
+3. Main Objective
 Discover more
 Upgrade Your OS
 Learn Engineering
