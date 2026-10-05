@@ -2898,6 +2898,7 @@ This is significantly better than a single sensor reading.
     
 Create the workflow:
 
+
 ┌──────────────┐
 │   Webhook    │
 └──────┬───────┘
@@ -3460,6 +3461,8 @@ Send Location
 Write Sheet
 Update ThingSpeak
 49. Project flowchart
+
+
              START
                |
                v
@@ -3806,6 +3809,8 @@ CAR-005 ─┘
 Future version could integrate authorized emergency-response APIs.
 
 59. Multi-vehicle architecture
+
+
              VEHICLE 1
              ESP32 #001
                  |
@@ -3834,8 +3839,11 @@ Future version could integrate authorized emergency-response APIs.
                          |
                          v
                      Operator
-60. Suggested project folder structure
+61. Suggested project folder structure
+    
 AI-Vehicle-IoT/
+
+
 │
 ├── README.md
 │
@@ -3862,7 +3870,7 @@ AI-Vehicle-IoT/
 │
 └── examples/
     └── accident-payload.json
-61. Sequence diagram
+63. Sequence diagram
 ESP32          n8n          AI Agent       Sheets     ThingSpeak    Telegram
   |              |              |             |            |            |
   |---JSON------>|              |             |            |            |
@@ -3884,13 +3892,15 @@ ESP32          n8n          AI Agent       Sheets     ThingSpeak    Telegram
   |              |              |             |            |            |
   |              |              |             |            |<--voice----|
   |              |              |             |            |            |
-62. One-line project explanation for viva
+64. One-line project explanation for viva
 The system uses an ESP32 to detect abnormal vehicle motion and obtain GPS coordinates, sends the event to n8n through an HTTP webhook, uses an AI Agent to analyze accident severity, logs the incident in Google Sheets, visualizes telemetry on ThingSpeak, and automatically sends Telegram text, voice and location alerts. LearnEngineering
 
-63. 30-second presentation explanation
+65. 30-second presentation explanation
 “Our project is an AI-powered IoT accident detection and vehicle tracking system. An ESP32 collects acceleration and gyroscope data from an MPU6050 and GPS information from a GPS module. When abnormal vehicle motion is detected, the ESP32 sends the event to an n8n webhook. n8n acts as the automation and agentic layer. An AI Agent analyzes the sensor data and determines the possible accident severity. The incident is stored in Google Sheets and telemetry is sent to ThingSpeak. For high-severity events, n8n automatically sends a Telegram emergency message, voice alert and GPS location to the configured recipient.”
 
-64. Final system architecture
+66. Final system architecture
+
+
                      ┌───────────────────────┐
                      │       VEHICLE         │
                      │                       │
@@ -3947,7 +3957,7 @@ The system uses an ESP32 to detect abnormal vehicle motion and obtain GPS coordi
               │                 │          │        Telegram GPS
               │                 │          │
               └─────────────────┴──────────┴───────────────┘
-65. Recommended implementation order
+68. Recommended implementation order
 Build it in this order rather than trying everything simultaneously:
 
 ESP32 + MPU6050 CompareCPUs
@@ -4145,6 +4155,8 @@ It is suitable as a final-year engineering project, IoT project, AI project, ESP
  
 
 AI Accident Alert & Vehicle Tracking — Mind Map
+
+
                            ┌──────────────────────────────┐
                            │ AI ACCIDENT ALERT &          │
                            │ VEHICLE TRACKING SYSTEM      │
