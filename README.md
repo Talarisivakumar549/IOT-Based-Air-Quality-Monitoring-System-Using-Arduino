@@ -143,6 +143,9 @@ Discover more
 Store Big Data
 Browse Reference
 Source Parts
+
+
+
                     START
                       │
                       ▼
@@ -197,11 +200,13 @@ Source Parts
               │
               ▼
            Repeat
-5. Hardware Block Diagram
+6. Hardware Block Diagram
 Discover more
 Compare CPUs
 Learn Sociology
 Data
+
+
                      ┌───────────────┐
                      │     ESP32     │
                      │               │
@@ -238,12 +243,14 @@ Data
                       │
                       ▼
                     FIELD
-6. Example Electrical Schematic
+8. Example Electrical Schematic
 Discover more
 data
 DATA
 software
 A typical low-voltage prototype can be wired approximately as follows:
+
+
 
                  ESP32
           ┌──────────────────┐
@@ -372,6 +379,8 @@ For an academic project, I recommend making crop type + growth stage explicit in
 10. n8n Automation Architecture
 The n8n workflow can be designed as:
 
+
+
                     ESP32 HTTP Request
                            │
                            ▼
@@ -427,7 +436,7 @@ The n8n workflow can be designed as:
                     │ Telegram    │
                     │ Notification│
                     └─────────────┘
-11. n8n Nodes
+12. n8n Nodes
 A practical workflow can contain:
 
 Webhook
@@ -670,6 +679,8 @@ The exact values depend on the sensor, soil and ESP32 ADC configuration. Compare
 16. Pump-Control Safety
 A better architecture is:
 
+
+
                  AI Recommendation
                         │
                         ▼
@@ -769,7 +780,10 @@ Field 4 → Water Level
 Field 5 → Rain Status
 Field 6 → Pump Status
 Field 7 → Irrigation Duration
+
 Dashboard:
+
+
 
 ┌──────────────────────────────────────────┐
 │       SMART IRRIGATION DASHBOARD         │
@@ -785,8 +799,12 @@ Dashboard:
 │ Stage: Flowering                          │
 │ AI: Irrigation Recommended                │
 └──────────────────────────────────────────┘
+
+
 21. Webpage / IoT Dashboard
 You can also create a custom webpage:
+
+
 
               SMART FARM AI
         ─────────────────────────
@@ -821,7 +839,11 @@ You can also create a custom webpage:
         ┌────────────────────────┐
         │ VIEW HISTORICAL DATA   │
         └────────────────────────┘
-22. Complete Communication Architecture
+    
+23. Complete Communication Architecture
+
+
+
                          INTERNET
                             │
              ┌──────────────┼──────────────┐
@@ -848,7 +870,7 @@ You can also create a custom webpage:
                  │
                  ▼
                Pump
-23. Agentic IoT Concept
+25. Agentic IoT Concept
 The project becomes more than simple IoT when the AI Agent can: LearnSociology
 
 OBSERVE
@@ -947,7 +969,9 @@ For safety, manual /pump_on should still pass through maximum-runtime and sensor
 26. n8n Workflow Logic
 Pseudo-code:
 
+
 RECEIVE SENSOR DATA
+
 
 IF soil moisture < crop threshold
     AND rain = false
@@ -975,6 +999,8 @@ IF soil moisture < crop threshold
 ELSE
     Pump OFF
     LOG reason
+
+    
 27. Fault Detection
 The system should also identify: LearnEngineering
 
@@ -1014,6 +1040,8 @@ A complete record can contain:
   "pump_status": "ON",
   "system_status": "NORMAL"
 }
+
+
 29. Project Development Phases
 Phase 1 — Hardware
 ESP32
@@ -1218,6 +1246,9 @@ Multi-crop support
 Reinforcement-learning irrigation optimization
 
 35. Final System Diagram
+
+
+
                          ┌──────────────────┐
                          │       FARM       │
                          │                  │
@@ -1286,7 +1317,7 @@ Reinforcement-learning irrigation optimization
               ▼             ▼
              Text          Voice
              Alert         Alert
-36. Recommended Project Title
+37. Recommended Project Title
 For a college/project report, I would use:
 
 “AI-Powered Automated Irrigation System Using Crop Prediction and Agentic IoT with ESP32, n8n Automation, Telegram Voice Alerts, Google Sheets and ThingSpeak Cloud Monitoring” LearnEngineering
@@ -1363,7 +1394,10 @@ The system can support remote status checking and manual commands. LearnEngineer
 
 Historical data can later be used to develop a dedicated machine-learning crop/irrigation prediction model.
 
+
 Key architecture
+
+
 ┌──────────────┐
 │ Farm Sensors │
 └──────┬───────┘
@@ -1518,7 +1552,11 @@ Provide an extensible agentic IoT architecture.
 
 Reduce dependence on manual emergency reporting.
 
+
 4. Overall system architecture
+
+
+
                          ┌───────────────────────┐
                          │      VEHICLE          │
                          │                       │
@@ -1567,7 +1605,7 @@ Reduce dependence on manual emergency reporting.
           │ Google Sheets  │ │  ThingSpeak   │ │    Telegram      │
           │ Event database │ │ Cloud graphs  │ │ Text + Voice     │
           └────────────────┘ └───────────────┘ └──────────────────┘
-5. Hardware requirements
+6. Hardware requirements
 Required components
 Component	Purpose
 ESP32 DevKit	Main IoT controller
@@ -1602,6 +1640,8 @@ relay
 emergency cancellation button
 
 6. Recommended hardware architecture
+
+
                        +----------------------+
                        |       VEHICLE        |
                        +----------------------+
@@ -1633,7 +1673,7 @@ emergency cancellation button
                      |
                      v
                   Buzzer
-7. Schematic diagram
+8. Schematic diagram
 A simple prototype wiring can be arranged as follows.
 
 MPU6050 → ESP32
@@ -1665,6 +1705,8 @@ GPIO 27
 Configure the pin with INPUT_PULLUP.
 
 8. Complete electrical block diagram
+
+
                   +-------------------+
                   |     5V INPUT      |
                   +---------+---------+
@@ -1704,7 +1746,7 @@ Configure the pin with INPUT_PULLUP.
                               |
                               v
                           n8n Webhook
-9. How accident detection works
+10. How accident detection works
 The MPU6050 provides:
 
 X acceleration
@@ -1846,7 +1888,9 @@ Example:
 13. n8n architecture
 n8n is particularly suitable because it connects APIs, applications and AI workflows. n8n documents built-in Telegram functionality and AI capabilities. n8n Docs+1
 
+
 The main workflow:
+
 
 ESP32
   |
@@ -2175,6 +2219,8 @@ Because Internet connectivity or AI response time could fail immediately after a
 The ESP32 should therefore detect the event locally and store/queue the event if necessary. CompareCPUs
 
 23. Agentic decision architecture
+
+
              SENSOR DATA
                   |
                   v
@@ -2212,7 +2258,7 @@ The ESP32 should therefore detect the event locally and store/queue the event if
          /        |        \
         v         v         v
    Sheets     ThingSpeak Telegram
-24. Telegram Bot
+25. Telegram Bot
 Create a Telegram bot using Telegram's official bot creation mechanism.
 
 Obtain:
@@ -2848,6 +2894,8 @@ ACCIDENT
 This is significantly better than a single sensor reading.
 
 33. n8n AI workflow in detail
+
+    
 Create the workflow:
 
 ┌──────────────┐
@@ -2949,6 +2997,8 @@ Longitude
 ThingSpeak supports channel data visualization and map-related channel functionality through its APIs/platform. MathWorks+1 BrowseReference
 
 36. Complete data flow
+
+
                    VEHICLE
                       |
           +-----------+-----------+
@@ -3006,7 +3056,7 @@ ThingSpeak supports channel data visualization and map-related channel functiona
              |
              v
             Log
-37. Telegram conversation example
+38. Telegram conversation example
 Accident event
 System → Telegram LearnEngineering
 
@@ -3245,6 +3295,8 @@ return [{
     }
 }];
 45. State diagram
+
+
                  +---------+
                  | START   |
                  +----+----+
@@ -3298,7 +3350,12 @@ return [{
                                       |
                                       v
                                    NORMAL
+
+
 46. Software architecture
+
+
+
 +-----------------------------------------------------+
 |                    SOFTWARE                         |
 +-----------------------------------------------------+
@@ -3358,7 +3415,10 @@ Send vehicle location
 
 Tool 6:
 Get ThingSpeak history
+
 Then the AI Agent becomes:
+
+
 
                  AI AGENT
                     |
